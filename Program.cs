@@ -74,49 +74,70 @@ namespace ConsoleRPG
 
         }
 
-        public void Switch()
+        public void Choice()
         {
             int Action = 0;
-            Action = int.Parse(Console.ReadLine());
-            switch (Action)
+            try
             {
-                case 1:
-                    Console.Clear();
-                    Eat();
-                    AUTO();
-                    break;
+                Action = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Не дави так часто на enter");
+                System.Threading.Thread.Sleep(300);
+            }
+            finally
+            {
+                switch (Action)
+                {
+                    case 1:
+                        Console.Clear();
+                        Eat();
+                        AUTO();
+                        break;
 
-                case 2:
-                    Console.Clear();
-                    DoHW();
-                    AUTO();
-                    break;
+                    case 2:
+                        Console.Clear();
+                        DoHW();
+                        AUTO();
+                        break;
 
-                case 3:
-                    Console.Clear();
-                    PlayPC();
-                    AUTO();
-                    break;
+                    case 3:
+                        Console.Clear();
+                        PlayPC();
+                        AUTO();
+                        break;
 
-                case 4:
-                    Console.Clear();
-                    DoNothing();
-                    AUTO();
-                    break;
+                    case 4:
+                        Console.Clear();
+                        DoNothing();
+                        AUTO();
+                        break;
 
-                default:
-                    Console.WriteLine("U STUPID!");
-                    Console.ReadKey();
-                    Console.Clear();
-                    AUTO();
-                    break;
+                    default:
+                        Console.WriteLine("U STUPID!");
+                        System.Threading.Thread.Sleep(800);
+                        Console.Clear();
+                        AUTO();
+                        break;
+                }
             }
         }
 
         public void StatsMaxHunger()
         {
             #region _hunger
-            if (_hunger <= 0)
+
+            if (_hunger >= 350)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Вы выиграли!");
+                Console.ReadLine();
+                Environment.Exit(1);
+            }
+
+            else if (_hunger <= 0)
             {
                 Console.Clear();
                 Console.WriteLine(Stat+"голод: ");
@@ -151,12 +172,7 @@ namespace ConsoleRPG
                 Console.ResetColor();
             }
 
-            else if (_hunger >= 350)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(Stat + "Вы выиграли!");
-            }
+            
 
             #endregion
         }
@@ -166,7 +182,16 @@ namespace ConsoleRPG
             
             #region _iq
 
-            if (_iq <= 0)
+             if (_iq >= 250)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Вы выиграли!");
+                Console.ReadLine();
+                Environment.Exit(1);
+            }
+
+            else if(_iq <= 0)
             {
                 Console.Clear();
                 Console.WriteLine(Stat+"ум: ");
@@ -201,12 +226,7 @@ namespace ConsoleRPG
                 Console.ResetColor();
             }
 
-            else if (_iq >= 250)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(Stat + "Вы выиграли!");
-            }
+            
 
             #endregion
         }
@@ -214,7 +234,20 @@ namespace ConsoleRPG
         public void StatsMaxEntertaiment()
         {
             #region _entertaiment
-            if (_entertainment <= 0)
+
+            if (_entertainment >= 450)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Вы выиграли!");
+
+                Console.ResetColor();
+
+                Console.ReadLine();
+                Environment.Exit(1);
+            } 
+
+            else if (_entertainment <= 0)
             {
                 Console.Clear();
                 Console.WriteLine(Stat);
@@ -225,13 +258,7 @@ namespace ConsoleRPG
                 Environment.Exit(1);
             }
 
-            else if (_entertainment >= 450)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(Stat + "Вы выиграли!");
-                Console.ResetColor();
-            }
+            
             else if (_entertainment > 80)
             {
                 Console.WriteLine(Stat + "развлечение: ");
@@ -287,7 +314,7 @@ namespace ConsoleRPG
     {
         static void Main(string[] args)
         {
-            Human Daniel = new Human(120, 100, 110);
+            Human Daniel = new Human(120, 120, 210);
 
             #region TODO
             /*
@@ -298,12 +325,12 @@ namespace ConsoleRPG
             */
             #endregion
 
-
             Daniel.AUTO();
 
             while (true)
             {
-                Daniel.Switch();
+
+                Daniel.Choice();
             }
 
         }
