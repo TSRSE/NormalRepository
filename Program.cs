@@ -351,6 +351,7 @@ namespace ConsoleRPG
             Console.ResetColor();
 
         }
+
     }
 
     class Program
