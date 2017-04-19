@@ -308,50 +308,60 @@ namespace ConsoleRPG
 
         public void INTRO()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("####@@@@@@@@@@@@##########@@@@@@@@@@############");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("    Y");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("####@@@@@@@@@@@@##########@@@@@@@@@@############");
+            Console.WriteLine("  .-^-.");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("########@@@#########################@@@#########");
+            Console.WriteLine(" /     \\      .- ~ ~ -.");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("########@@@#########################@@@#########");
+            Console.WriteLine("()     ()    /   _ _   `.                     _ _ _");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            Console.WriteLine(" \\_   _/    /  /     \\   \\                . ~  _ _  ~ .");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            Console.WriteLine("   | |     /  /       \\   \\             .' .~       ~-. `.");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("########@@@############@@@######################");
+            Console.WriteLine("   | |    /  /         )   )           /  /             `.`.");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("########@@@############@@@######################");
+            Console.WriteLine("   \\ \\_ _/  /         /   /           /  /                `'");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            Console.WriteLine("    \\_ _ _.'         /   /           (  (");
             System.Threading.Thread.Sleep(100);
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("########@@@###############@@@@@@@@@@############");
-            System.Threading.Thread.Sleep(1200);
+            Console.WriteLine("                    /   /             \\  \\");
+            System.Threading.Thread.Sleep(100);
 
+            Console.WriteLine("                   /   /               \\  \\");
+            System.Threading.Thread.Sleep(100);
+
+            Console.WriteLine("                  /   /                 )  )");
+            System.Threading.Thread.Sleep(100);
+
+            Console.WriteLine("                 (   (                 /  /");
+            System.Threading.Thread.Sleep(100);
+
+            Console.WriteLine("                  `.  `.             .'  /");
+            System.Threading.Thread.Sleep(100);
+
+            Console.WriteLine("                    `.   ~ - - - - ~   .'");
+            System.Threading.Thread.Sleep(100);
+
+            Console.WriteLine("                       ~ . _ _ _ _ . ~");
+            System.Threading.Thread.Sleep(400);
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("Developed by " + "TSRSE");
+            System.Threading.Thread.Sleep(1400);
             Console.ResetColor();
 
         }
-
     }
 
     class Program
