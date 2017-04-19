@@ -66,8 +66,6 @@ namespace ConsoleRPG
 
         #region Maxregion
 
-
-
         public static void ShowStats()
         {
             Console.WriteLine(" Голод: " + _hunger + "\n Ум: " + _iq + "\n Развлечение: " + _entertainment + "\n");
@@ -117,7 +115,7 @@ namespace ConsoleRPG
 
                     default:
                         Console.WriteLine("U STUPID!");
-                        System.Threading.Thread.Sleep(800);
+                        System.Threading.Thread.Sleep(200);
                         Console.Clear();
                         AUTO();
                         break;
@@ -293,14 +291,12 @@ namespace ConsoleRPG
 
         #endregion
 
-
         public Human(int h, int i, int e)
         {
             _hunger = h;
             _iq = i;
             _entertainment = e;
         }
-
 
         public static void Minus(object Objectt)
         {
@@ -309,30 +305,74 @@ namespace ConsoleRPG
             AUTO();
             //ShowStats();
         }
+
+        public void INTRO()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("####@@@@@@@@@@@@##########@@@@@@@@@@############");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("####@@@@@@@@@@@@##########@@@@@@@@@@############");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("########@@@#########################@@@#########");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("########@@@#########################@@@#########");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("########@@@############@@@######################");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("########@@@############@@@######################");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            System.Threading.Thread.Sleep(100);
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("########@@@###############@@@@@@@@@@############");
+            System.Threading.Thread.Sleep(1200);
+
+            Console.ResetColor();
+
+        }
     }
 
     class Program
     {
-        
-
         static void Main(string[] args)
         {
+
             Human Daniel = new Human(120, 120, 210);
+
+            Daniel.INTRO();
 
             #region TODO
 
             TimerCallback tm = new TimerCallback(Human.Minus);
             Timer time = new Timer(tm, null, 2, 5000);
-            //Console.ReadLine();
 
             #endregion
-            //Daniel.
-
+            
             while (true)
             {
                 Daniel.Choice();
             }
-            
         }
     }
 }
