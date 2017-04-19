@@ -11,9 +11,9 @@ namespace ConsoleRPG
     class Human
     {
         #region encapsulate
-        public string Stat = "Статус параметра ";
-        public int _hunger, _iq, _entertainment;
-        int hunger { get { return _hunger; } set { _hunger = value; } }
+        public static string Stat = "Статус параметра ";
+        public static int _hunger, _iq, _entertainment;
+        static int hunger { get { return _hunger; } set { _hunger = value; } }
         int iq { get { return _iq; } set { _iq = value; } }
         int entertainment { get { return _entertainment; } set { _entertainment = value; } }
         #endregion
@@ -22,20 +22,20 @@ namespace ConsoleRPG
 
         #region ActionMethods
 
-        public void Eat()
+        public static void Eat()
         {
             _hunger += 2;
             _entertainment -= 1;
         }
 
-        public void DoHW()
+        public static void DoHW()
         {
             _iq += 2;
             _entertainment -= 1;
             _hunger -= 1;
         }
 
-        public void PlayPC()
+        public static void PlayPC()
         {
             _entertainment += 2;
             _hunger -= 2;
@@ -48,13 +48,14 @@ namespace ConsoleRPG
             }
         }
 
-        public void DoNothing()
+        public static void DoNothing()
         {
             _iq -= 2;
             _hunger -= 2;
             _entertainment -= 2;
         }
-        public void AUTO()
+
+        public static void AUTO()
         {
             StatsMaxEntertaiment();
             StatsMaxHunger();
@@ -67,7 +68,7 @@ namespace ConsoleRPG
 
 
 
-        public void ShowStats()
+        public static void ShowStats()
         {
             Console.WriteLine(" Голод: " + _hunger + "\n Ум: " + _iq + "\n Развлечение: " + _entertainment + "\n");
             Console.WriteLine("1) Похавать \n2) Сделать ДЗ \n3) Поиграть в компьютер \n4) Ничего не делать.");
@@ -124,7 +125,7 @@ namespace ConsoleRPG
             }
         }
 
-        public void StatsMaxHunger()
+        public static void StatsMaxHunger()
         {
             #region _hunger
 
@@ -177,7 +178,7 @@ namespace ConsoleRPG
             #endregion
         }
 
-        public void StatsMaxIq()
+        public static void StatsMaxIq()
         {
             
             #region _iq
@@ -231,7 +232,7 @@ namespace ConsoleRPG
             #endregion
         }
 
-        public void StatsMaxEntertaiment()
+        public static  void StatsMaxEntertaiment()
         {
             #region _entertaiment
 
@@ -287,20 +288,11 @@ namespace ConsoleRPG
         #endregion
 
         #region TODOregion
-        public void Thread()
-        {
-            while (true)
-            {
-                _hunger -= 1;
-
-                Console.WriteLine("Прошло 45 секунд!");
-
-                ShowStats();
-            }
-        }
+       
         #endregion
 
         #endregion
+
 
         public Human(int h, int i, int e)
         {
@@ -308,31 +300,39 @@ namespace ConsoleRPG
             _iq = i;
             _entertainment = e;
         }
+
+
+        public static void Minus(object Objectt)
+        {
+            hunger -= 2;
+            Console.Clear();
+            AUTO();
+            //ShowStats();
+        }
     }
 
     class Program
     {
+        
+
         static void Main(string[] args)
         {
             Human Daniel = new Human(120, 120, 210);
 
             #region TODO
-            /*
-            Thread oThread = new Thread(new ThreadStart(Daniel.Thread));
-            oThread.Start();
 
-            Thread.Sleep(45000);
-            */
+            TimerCallback tm = new TimerCallback(Human.Minus);
+            Timer time = new Timer(tm, null, 2, 5000);
+            //Console.ReadLine();
+
             #endregion
-
-            Daniel.AUTO();
+            //Daniel.
 
             while (true)
             {
-
                 Daniel.Choice();
             }
-
+            
         }
     }
 }

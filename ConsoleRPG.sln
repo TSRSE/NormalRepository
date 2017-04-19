@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRPG", "ConsoleRPG\ConsoleRPG.csproj", "{2B0D40FF-D240-4077-9249-6E1027919DC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRPG", "ConsoleRPG.csproj", "{2B0D40FF-D240-4077-9249-6E1027919DC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProject2", "..\NewProject2\NewProject2\NewProject2.csproj", "{F1724146-0A92-496F-93F7-D77ABB84211E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2B0D40FF-D240-4077-9249-6E1027919DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B0D40FF-D240-4077-9249-6E1027919DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B0D40FF-D240-4077-9249-6E1027919DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1724146-0A92-496F-93F7-D77ABB84211E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1724146-0A92-496F-93F7-D77ABB84211E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1724146-0A92-496F-93F7-D77ABB84211E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1724146-0A92-496F-93F7-D77ABB84211E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
